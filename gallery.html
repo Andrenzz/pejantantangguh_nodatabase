@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Memory Gallery • PEJANTAN TANGGUH</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/music-player.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <nav class="nav">
+    <a class="brand" href="index.html">← PEJANTAN <span>TANGGUH</span></a>
+    <div class="navlinks"><a href="#upload-memory">Upload</a><a href="index.html#members">Members</a><a href="index.html#chat">Chat</a><a class="nav-cta" href="index.html">Back Home</a></div>
+  </nav>
+
+  <header class="page-hero memory-page-hero simple-gallery-hero">
+    <div class="gallery-hero-copy">
+      <div class="eyebrow">Memory Gallery</div>
+      <h1>Semua momen.<br>Satu galeri.</h1>
+      <p>Foto bersama ditampilkan dalam satu galeri bersih, variatif, dan animatif. Klik foto untuk melihat ukuran besar atau tambahkan memori baru melalui fitur upload.</p>
+      <div class="gallery-summary" id="gallerySummary"></div>
+    </div>
+  </header>
+
+  <main class="section gallery-section no-timeline-gallery">
+    <section class="memory-masonry flat-memory-grid" id="memoryGrid" aria-live="polite"></section>
+
+    <section class="upload-memory-panel glass" id="upload-memory">
+      <div>
+        <div class="eyebrow">Tambah memori</div>
+        <h2>Upload foto terbaru.</h2>
+        <p>Foto yang dipilih langsung ditambahkan ke galeri di browser ini. Upload lokal tidak melakukan tagging wajah dan tidak memasukkan foto ke profil anggota.</p>
+      </div>
+      <div class="upload-actions">
+        <label class="btn primary upload-button">Pilih Foto<input id="memoryUpload" type="file" accept="image/*" multiple hidden></label>
+        <button class="btn" id="clearUploads" type="button">Hapus Upload Lokal</button>
+        <span id="uploadStatus">Belum ada upload baru.</span>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox">
+    <button aria-label="Tutup">×</button>
+    <div class="lightbox-stage"><img alt="Preview" src=""><div class="lightbox-meta"><span id="lightboxName"></span></div></div>
+  </div>
+
+  <footer class="footer">PEJANTAN TANGGUH 💪⚡ • Memory Gallery</footer>
+  <script src="assets/js/memory-data.js"></script>
+  <script src="assets/js/gallery.js"></script>
+  <script src="assets/js/music-player.js"></script>
+</body>
+</html>

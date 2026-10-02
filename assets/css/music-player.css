@@ -1,0 +1,70 @@
+/* PEJANTAN TANGGUH • Music Player */
+.pt-music-player{
+  position:fixed;right:18px;bottom:18px;z-index:140;width:min(360px,calc(100vw - 28px));
+  border:1px solid rgba(255,255,255,.14);border-radius:22px;
+  background:linear-gradient(145deg,rgba(13,27,21,.96),rgba(7,17,13,.94));
+  backdrop-filter:blur(20px);box-shadow:0 22px 60px rgba(0,0,0,.42);
+  color:var(--text,#f6f4e9);overflow:hidden;transition:.25s ease;
+}
+.pt-music-player *{box-sizing:border-box}
+.pt-music-player button,.pt-music-player input{font:inherit}
+.pt-music-top{display:flex;align-items:center;gap:10px;padding:12px 12px 8px}
+.pt-music-mark{
+  width:40px;height:40px;border-radius:14px;display:grid;place-items:center;flex:0 0 auto;
+  background:linear-gradient(135deg,var(--green,#5ee08a),var(--lime,#c8ff74));
+  color:#082014;font-weight:1000;box-shadow:0 8px 20px rgba(94,224,138,.18)
+}
+.pt-music-meta{min-width:0;flex:1}
+.pt-music-title{font-weight:900;font-size:.96rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pt-music-artist{font-size:.78rem;color:var(--muted,#a9b9af);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+.pt-music-icon{
+  width:34px;height:34px;border:0;border-radius:11px;background:rgba(255,255,255,.07);
+  color:var(--text,#f6f4e9);cursor:pointer;display:grid;place-items:center;transition:.2s
+}
+.pt-music-icon:hover{background:rgba(255,255,255,.13);transform:translateY(-1px)}
+.pt-music-main{padding:0 12px 12px}
+.pt-music-progress{display:flex;align-items:center;gap:8px;margin:6px 0 10px}
+.pt-music-time{font-size:.68rem;color:var(--muted,#a9b9af);font-variant-numeric:tabular-nums;min-width:32px}
+.pt-music-range{width:100%;accent-color:var(--green,#5ee08a);cursor:pointer}
+.pt-music-controls{display:grid;grid-template-columns:42px 50px 42px 1fr;align-items:center;gap:7px}
+.pt-music-control{
+  height:42px;border:1px solid rgba(255,255,255,.1);border-radius:14px;background:rgba(255,255,255,.06);
+  color:var(--text,#f6f4e9);cursor:pointer;font-weight:900
+}
+.pt-music-control:hover{background:rgba(255,255,255,.12)}
+.pt-music-play{
+  height:50px;border-radius:17px;border:0;background:linear-gradient(135deg,var(--green,#5ee08a),var(--lime,#c8ff74));
+  color:#082014;font-size:1.05rem;box-shadow:0 10px 24px rgba(94,224,138,.17)
+}
+.pt-music-volume{display:flex;align-items:center;gap:7px;min-width:0}
+.pt-music-volume .pt-music-icon{width:34px;height:34px;flex:0 0 auto}
+.pt-music-volume input{min-width:0}
+.pt-music-search{display:none;padding:0 12px 12px}
+.pt-music-search.open{display:block}
+.pt-music-searchbox{
+  width:100%;border:1px solid rgba(255,255,255,.12);border-radius:13px;padding:10px 11px;
+  background:rgba(255,255,255,.06);color:var(--text,#f6f4e9);outline:none
+}
+.pt-music-searchbox:focus{border-color:rgba(94,224,138,.55);box-shadow:0 0 0 3px rgba(94,224,138,.09)}
+.pt-music-results{max-height:190px;overflow:auto;margin-top:8px;display:grid;gap:5px}
+.pt-music-result{
+  width:100%;border:0;border-radius:12px;background:rgba(255,255,255,.045);color:var(--text,#f6f4e9);
+  text-align:left;padding:9px 10px;cursor:pointer
+}
+.pt-music-result:hover,.pt-music-result.active{background:rgba(94,224,138,.12)}
+.pt-music-result b{display:block;font-size:.82rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pt-music-result span{display:block;color:var(--muted,#a9b9af);font-size:.7rem;margin-top:2px}
+.pt-music-empty{padding:9px 4px;color:var(--muted,#a9b9af);font-size:.78rem}
+.pt-music-player.collapsed{width:58px;height:58px;border-radius:19px}
+.pt-music-player.collapsed .pt-music-meta,
+.pt-music-player.collapsed .pt-music-main,
+.pt-music-player.collapsed .pt-music-search,
+.pt-music-player.collapsed .pt-search-toggle{display:none}
+.pt-music-player.collapsed .pt-music-top{padding:8px;gap:0}
+.pt-music-player.collapsed .pt-music-mark{width:40px;height:40px;cursor:pointer}
+.pt-music-player.collapsed .pt-collapse{position:absolute;inset:0;width:58px;height:58px;opacity:0}
+@media (max-width:640px){
+  .pt-music-player{left:12px;right:12px;bottom:12px;width:auto}
+  .pt-music-player.collapsed{left:auto;right:12px;width:58px}
+  .pt-music-controls{grid-template-columns:40px 48px 40px 1fr}
+}
